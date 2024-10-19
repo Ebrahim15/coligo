@@ -5,7 +5,8 @@ import React from "react";
 
 const SearchBarElm = styled('div')(({ theme }) => ({
     position: 'relative',
-    borderRadius: theme.shape.borderRadius,
+    // borderRadius: theme.shape.borderRadius,
+    borderRadius: '25rem',
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
@@ -23,6 +24,7 @@ const SearchBarElm = styled('div')(({ theme }) => ({
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
+    borderRadius: '25rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -48,14 +50,21 @@ const SearchBarElm = styled('div')(({ theme }) => ({
     },
   }));
 
-const SearchBar = () => {
+
+  type searchProps = {
+    display: Object,
+    color: string
+  }
+const SearchBar = ({display, color}:searchProps) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, display:display, width: 'fit-content' , marginBlock:{xs:1, sm:"auto"}}}>
       <SearchBarElm>
         <SearchIconWrapper>
-          <Search sx={{ color: "text.primary" }} />
+          <Search sx={{ color: color }} />
         </SearchIconWrapper>
         <StyledInputBase
+          // color={"primary"}
+          sx={{color: color}}
           placeholder="Search…"
           inputProps={{ "aria-label": "search" }}
         />

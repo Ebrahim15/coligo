@@ -34,7 +34,15 @@ export default function ExamsCard() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Card sx={{ display: "flex", height: 250, padding: 3, boxShadow: 1}} elevation={0}>
+      <Card
+        sx={{ 
+          display: "flex", 
+          // height: 250, 
+          // padding: 3, 
+          boxShadow: 1 
+        }}
+        elevation={0}
+      >
         <Box
           sx={{
             display: "flex",
@@ -43,12 +51,15 @@ export default function ExamsCard() {
             alignItems: "start",
           }}
         >
-          <CardContent sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: 'space-between',
-            flexGrow: 1,
-          }}>
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              flexGrow: 1,
+              padding: 3
+            }}
+          >
             <Typography
               variant="h3"
               sx={{
@@ -64,7 +75,7 @@ export default function ExamsCard() {
                 Here we are, Are you ready to fight? Don't worry, we prepared
                 some tips to be ready for your exams.
               </Typography>
-              <Typography variant="subtitle2" color="text.secondary">
+              <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                 "Nothing happens until something moves"-Albert Einstein
               </Typography>
             </Box>
@@ -78,7 +89,7 @@ export default function ExamsCard() {
         </Box>
         <CardMedia
           component="img"
-          sx={{ width: 400}}
+          sx={{ width: 400, height: {md: 250, sm:'100%', xs:'100%'} }}
           image={workspace}
           alt="Live from space album cover"
         />

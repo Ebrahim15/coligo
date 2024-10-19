@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
             component="a"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "flex" },
               fontWeight: 700,
               color: "text.primary",
               textDecoration: "none",
@@ -57,37 +57,6 @@ function ResponsiveAppBar() {
             Welcome Talia,
           </Typography>
 
-          {/* Small Screens */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            ></Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-
           <Typography
             variant="h5"
             noWrap
@@ -95,7 +64,7 @@ function ResponsiveAppBar() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: "none", md: "none" },
               flexGrow: 1,
               fontWeight: 700,
               color: "inherit",
@@ -110,14 +79,16 @@ function ResponsiveAppBar() {
             {/* Search Bar & Avatar & Icons */}
               <Box
                 sx={{
-                  flexGrow: 1,
+                  flexGrow: {xs: 0, sm: 1},
                   display: "flex",
                   flexDirection: "row",
                   gap: 3,
                   alignItems: "center",
+                  width:{xs:"100%", sm:"auto"},
+                  justifyContent: {xs:"end"}
                 }}
               >
-                <SearchBar />
+                <SearchBar display={{xs:"none", md:"block"}} color="text.primary"/>
 
                 {icons.map((icon) => (
                   <NavIcon

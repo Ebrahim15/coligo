@@ -45,7 +45,7 @@ const Dashboard = ({announcements, quizes}: dashboardProps) => {
                 <ExamsCard />
             </Grid2>
 
-            <Grid2 container gap={3}>
+            <Grid2 container gap={3} sx={{flexDirection:{xs:"column", sm:"column", md: "row"}}}>
               {/* announcements */}
               <Grid2 size='grow'>
                 <Announcements announcements={announcements}/>
