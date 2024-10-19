@@ -124,13 +124,13 @@ import SearchBar from "../search-bar/SearchBar";
 
 const drawerWidth = 240;
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * Remove this when copying and pasting into your project.
-   */
-  window?: () => Window;
-}
+// interface Props {
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * Remove this when copying and pasting into your project.
+//    */
+//   window?: () => Window;
+// }
 
 const siderbar = [
   {
@@ -170,8 +170,9 @@ const theme = createTheme({
     },
   },
 });
-export default function ResponsiveDrawer(props: Props) {
-  const { window } = props;
+
+export default function ResponsiveDrawer() {
+  // const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
 
@@ -241,7 +242,7 @@ export default function ResponsiveDrawer(props: Props) {
         </IconButton>
         <Box
           component="nav"
-          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          sx={{ width: {sm: drawerWidth }, flexShrink: { sm: 0 } }}
           aria-label="mailbox folders"
         >
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}

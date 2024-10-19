@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./dashboard.css";
 import SideBar from "../sidebar/SideBar";
 import { Box, Grid2 } from "@mui/material";
@@ -25,11 +25,12 @@ type dashboardProps = {
 }
 
 const Dashboard = ({announcements, quizes}: dashboardProps) => {
+
   return (
       <Grid2 container>
         {/* sidebar */}
-        <Grid2>
-          <SideBar />
+        <Grid2 width={{xs:0, sm:"auto"}}>
+          <SideBar/>
         </Grid2>
 
         {/* dashboard page */}
