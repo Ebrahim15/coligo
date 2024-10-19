@@ -5,7 +5,7 @@ const requireAuth = (Component: any) => {
   const AuthenticatedComponent = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
 
-    if(isLoggedIn) return <Component/>
+    if(isLoggedIn) return <Component />
     else return <Home setLoggedIn = {setLoggedIn}/>
 
   };

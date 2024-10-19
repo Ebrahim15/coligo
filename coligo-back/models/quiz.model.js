@@ -18,6 +18,10 @@ const QuizSchema = mongoose.Schema(
             type: String,
             required: [true, "Please enter a due date"]
         }, 
+        taskType: {
+            type: String,
+            required: [true, "Please enter a task type"]
+        }
     },
     {
         timestamps: true

@@ -6,6 +6,10 @@ const AnnouncementSchema = mongoose.Schema(
             type: String,
             required: [true, "Please enter an author name"]
         },
+        authorImage: {
+            type: String,
+            required: [true, "Please enter an image url"]
+        },
         title: String,
         description: String,
     },
