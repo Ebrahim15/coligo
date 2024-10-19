@@ -47,12 +47,12 @@ const Dashboard = ({announcements, quizes}: dashboardProps) => {
 
             <Grid2 container gap={3}>
               {/* announcements */}
-              <Grid2 flexGrow={2}>
-                <Announcements />
+              <Grid2 size='grow'>
+                <Announcements announcements={announcements}/>
               </Grid2>
               {/* What's due */}
-              <Grid2 flexGrow={1}>
-                <WhatsDue/>
+              <Grid2>
+                <WhatsDue quizes={quizes}/>
               </Grid2>
             </Grid2>
           </Box>

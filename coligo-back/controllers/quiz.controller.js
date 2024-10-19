@@ -6,7 +6,7 @@ const addQuiz = async (req, res) => {
         try {
             const quiz = dueDate ? await Quiz.create({
                     ...req.body,
-                    dueDate: dueDate
+                    dueDate: dueDate.toUTCString()
                 }) :
                 res.status(500).json({
                     message: "Invalid date"
@@ -48,7 +48,7 @@ const updateQuiz = async (req, res) => {
         try {
             const quiz = await Quiz.findByIdAndUpdate(id, {
                 ...req.body,
-                dueDate: dueDate
+                dueDate: dueDate.toUTCString()
             });
 
             if (!quiz) {
