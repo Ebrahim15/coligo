@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import requireAuth from "./components/requireAuth/requireAuth";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
+import { error } from "console";
 
 function App() {
   const theme = createTheme({
@@ -50,9 +51,36 @@ function App() {
       }
     }
   });
+
+  const [announcements, setAnnouncements] = useState([]);
+  const [quizes, setQuizes] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/announcements')
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      setAnnouncements(data);
+    })
+    .catch((error) => console.log(error))
+
+    fetch('http://localhost:8080/api/quizes')
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      setQuizes(data);
+    })
+    .catch((error) => console.log(error))
+
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />;
+      <Dashboard announcements={announcements} quizes={quizes}/>;
     </ThemeProvider>
   );
 }

@@ -25,7 +25,7 @@ const addQuiz = async (req, res) => {
     }
 };
 
-const getQuizes = async () => {
+const getQuizes = async (req, res) => {
     try {
         const quizes = await Quiz.find({});
         res.status(200).json(quizes);

@@ -121,6 +121,7 @@ function ResponsiveAppBar() {
 
                 {icons.map((icon) => (
                   <NavIcon
+                    key={icon.title}
                     title={icon.title}
                     Icon={
                       icon.icon

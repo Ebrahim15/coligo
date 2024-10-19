@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const announcementRoute = require('./routes/announcements.route.js');
 const quizRoute = require('./routes/quiz.route.js');
 
@@ -8,6 +9,9 @@ const port = 8080;
 
 // Middleware
 app.use(express.json())
+app.use(cors({
+    origin: '*'
+}))
 
 // Routes
 app.use('/api/announcements', announcementRoute);

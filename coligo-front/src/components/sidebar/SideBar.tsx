@@ -74,11 +74,11 @@ const SideBar = () => {
         anchor="left"
       >
         <Typography variant="h3">Coligo</Typography>
-        <Box sx={{ width: 250 }} role="presentation">
+        <Box sx={{ width: "100%" }} role="presentation">
           <List>
             {siderbar.map((item, index) => (
               <ListItem key={item.title} disablePadding>
-                <ListItemButton onClick={() => console.log(item.title)}>
+                <ListItemButton className="listItemButton" sx={{":hover": {backgroundColor: "white", color:"themeColor.primary"}}} onClick={() => console.log(item.title)}>
                   <ListItemIcon sx={{color: 'white'}}>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.title} />
                 </ListItemButton>

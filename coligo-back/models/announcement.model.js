@@ -10,8 +10,14 @@ const AnnouncementSchema = mongoose.Schema(
             type: String,
             required: [true, "Please enter an image url"]
         },
-        title: String,
-        description: String,
+        title: {
+            type: String,
+            required: [true, "Please enter a title"]
+        },
+        description: {
+            type: String,
+            required: [true, "Please enter a description"]
+        },
     },
     {
         timestamps: true

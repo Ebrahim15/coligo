@@ -1,11 +1,9 @@
 import React from "react";
 import "./dashboard.css";
 import SideBar from "../sidebar/SideBar";
-import { Box, createTheme, Grid2, Typography } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 import ResponsiveAppBar from "../nav/Nav";
 import ExamsCard from "../exams-card/ExamsCard";
-import { ThemeProvider } from "@emotion/react";
-import { red } from "@mui/material/colors";
 import Announcements from "../announcements/Announcements";
 import WhatsDue from "../whats-due/WhatsDue";
 
@@ -21,8 +19,12 @@ declare module "@mui/material/styles" {
   }
 }
 
+type dashboardProps = {
+  announcements: any,
+  quizes: any
+}
 
-const Dashboard = () => {
+const Dashboard = ({announcements, quizes}: dashboardProps) => {
   return (
       <Grid2 container>
         {/* sidebar */}
