@@ -30,13 +30,13 @@ const Announcements = ({ announcements }: announcementsProps) => {
             <Box>
               <Typography component={"p"}>{announcement.author}</Typography>
               <Typography variant="subtitle2" color="text.secondary">
-                Math 101
+                {announcement.title}
               </Typography>
             </Box>
             <Divider orientation="vertical" />
           </Grid2>
           <Grid2>
-            <Typography component={"p"} color="text.secondary">
+            <Typography component={"div"} color="text.secondary">
               {announcement.description}
             </Typography>
           </Grid2>
