@@ -3,10 +3,9 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import workspace from "../../workspace.png";
+import workspace from "../../images/workspace.png";
 import { Button, createTheme, Typography } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-import { red } from "@mui/material/colors";
 
 declare module "@mui/material/styles" {
   interface Palette {

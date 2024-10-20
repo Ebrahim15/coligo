@@ -3,7 +3,7 @@ import "./App.css";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import requireAuth from "./components/requireAuth/requireAuth";
-import { createTheme } from "@mui/material";
+import { Box, CircularProgress, createTheme, Skeleton, Typography } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { error } from "console";
 
@@ -54,6 +54,7 @@ function App() {
 
   const [announcements, setAnnouncements] = useState([]);
   const [quizes, setQuizes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/announcements')
@@ -73,6 +74,7 @@ function App() {
     .then((data) => {
       console.log(data);
       setQuizes(data);
+      setLoading(false);
     })
     .catch((error) => console.log(error))
 
@@ -80,7 +82,11 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard announcements={announcements} quizes={quizes}/>;
+      {
+        loading ? <Box display={"flex"} justifyContent={"center"} alignItems={"center"} height={"100vh"}><CircularProgress /></Box>: 
+        <Dashboard announcements={announcements} quizes={quizes}/>
+      }
+      {/* <Dashboard announcements={announcements} quizes={quizes}/> */}
     </ThemeProvider>
   );
 }
