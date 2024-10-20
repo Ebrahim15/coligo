@@ -57,26 +57,18 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/announcements')
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      setAnnouncements(data);
-    })
-    .catch((error) => console.log(error))
 
-    fetch('http://localhost:8080/api/quizes')
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      setQuizes(data);
+    Promise.all([
+      fetch("http://localhost:8080/api/announcements"),
+      fetch("http://localhost:8080/api/quizes"),
+    ]).then(([resAnnouncements, resQuizes]) => 
+      Promise.all([resAnnouncements.json(), resQuizes.json()])
+    )
+    .then(([announcements, quizes]) => {
+      setAnnouncements(announcements);
+      setQuizes(quizes);
       setLoading(false);
-    })
-    .catch((error) => console.log(error))
+    });
 
   }, [])
 

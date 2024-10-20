@@ -58,7 +58,7 @@ const SearchBarElm = styled('div')(({ theme }) => ({
   }
 const SearchBar = ({display, color}:searchProps) => {
   return (
-    <Box sx={{ flexGrow: 1, display:display, width: 'fit-content' , marginBlock:{xs:1, sm:"auto"}}}>
+    <Box sx={{ flexGrow: 1, display:display, width: 'fit-content' , marginBlock:{sm:1, md:"auto"}}}>
       <SearchBarElm>
         <SearchIconWrapper>
           <Search sx={{ color: color }} />
