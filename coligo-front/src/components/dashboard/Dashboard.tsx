@@ -20,12 +20,32 @@ declare module "@mui/material/styles" {
 }
 
 type dashboardProps = {
-  announcements: any;
-  quizes: any;
+  // announcements: any;
+  // quizes: any;
+  announcements: {
+    author: string,
+    authorImage: string,
+    createdAt: string,
+    description: string,
+    title: string,
+    updatedAt: string,
+    __v: number,
+    _id: string,
+  }[],
+  quizes: {
+    course: string;
+    createdAt: string;
+    dueDate: string;
+    taskType: string;
+    title: string;
+    topic: string;
+    updatedAt: string;
+    __v: number;
+    _id: string;
+  }[];
 };
 
 const Dashboard = ({ announcements, quizes }: dashboardProps) => {
-
   return (
     <Grid2 container>
       {/* sidebar */}
@@ -55,15 +75,15 @@ const Dashboard = ({ announcements, quizes }: dashboardProps) => {
           <Grid2
             container
             gap={3}
-            sx={{ flexDirection: { xs: "column", sm: "column", md: "row" } }}
+            sx={{ flexDirection: { xs: "column", sm: "column", md: "column", lg:"row" } }}
           >
             {/* announcements */}
             <Grid2 size="grow">
-              <Announcements announcements={announcements}/>
+              <Announcements announcements={announcements} />
             </Grid2>
             {/* What's due */}
-            <Grid2>
-              <WhatsDue quizes={quizes} />
+            <Grid2 size="auto">
+              <WhatsDue quizes={quizes}/>
             </Grid2>
           </Grid2>
         </Box>

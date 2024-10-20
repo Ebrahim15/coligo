@@ -3,7 +3,17 @@ import { Box, Button, Chip, Divider, Typography } from "@mui/material";
 import React from "react";
 
 type quizesProps = {
-  quizes: any
+  quizes: {
+    course: string,
+    createdAt: string,
+    dueDate: string,
+    taskType: string;
+    title: string;
+    topic: string;
+    updatedAt: string;
+    __v: number;
+    _id: string;
+  }[]
 }
 
 const WhatsDue = ({quizes}:quizesProps) => {

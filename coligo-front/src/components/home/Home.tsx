@@ -1,11 +1,8 @@
 import React from "react";
 import "./home.css";
-import { Box, Button, createTheme, Stack, Typography } from "@mui/material";
+import { Box, Button, createTheme, Typography } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-import graduation from "../../images/graduation-hat.png";
-import caseStudy from "../../images/caseStudy.png";
-import notebook from "../../images/notebook.png";
-import { School } from "@mui/icons-material";
+
 
 type homeProps = {
   setLoggedIn: Function;
@@ -53,7 +50,7 @@ const Home = ({ setLoggedIn }: homeProps) => {
         alignItems={"center"}
         gap={3}
       >
-        <Typography variant="h1">Welcome to Coligo</Typography>
+        <Typography variant="h1" textTransform={"uppercase"}>Welcome to Coligo</Typography>
         
         <Button variant="contained" onClick={handleLoginOnClick}>
           Log in
