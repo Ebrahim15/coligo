@@ -11,8 +11,8 @@ const Home = ({ setLoggedIn }: homeProps) => {
     }
 
     return (
-        <div>
-            <h1>Coligo</h1>
+        <div className='home'>
+            <h1>Welcome to Coligo</h1>
             <button onClick={handleLoginOnClick}>Login</button>
         </div>
     )
