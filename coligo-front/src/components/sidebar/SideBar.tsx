@@ -206,7 +206,7 @@ export default function ResponsiveDrawer() {
         <Typography variant="h3" textAlign={"center"}>
           Coligo
         </Typography>
-        <SearchBar color="white" display={{ xs: "block", sm: "none" }} />
+        <SearchBar color="white" display={{ sm: "block", md: "none" }} />
         <Box sx={{ width: "100%" }} role="presentation">
           <List>
             {siderbar.map((item, index) => (
