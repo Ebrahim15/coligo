@@ -50,7 +50,7 @@ const Home = ({ setLoggedIn }: homeProps) => {
         alignItems={"center"}
         gap={3}
       >
-        <Typography variant="h1" textTransform={"uppercase"}>Welcome to Coligo</Typography>
+        <Typography component={"div"} textTransform={"uppercase"} color="white" sx={{typography: {xs:"h4", sm:"h3", md:"h2", lg: "h1"}}}>Welcome to Coligo</Typography>
         
         <Button variant="contained" onClick={handleLoginOnClick}>
           Log in
