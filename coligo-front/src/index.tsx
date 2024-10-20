@@ -12,12 +12,12 @@ i18n.init({
   resources: {
     en: {
       translation: {
-        'welcomeMessage': 'Welcome Talia'
+        'welcomeMessage': 'Welcome Talia,'
       }
     },
     fr: {
       translation: {
-        'welcomeMessage': 'Bienvenue Talia'
+        'welcomeMessage': 'Bienvenue Talia,'
       }
     },
     ar: {

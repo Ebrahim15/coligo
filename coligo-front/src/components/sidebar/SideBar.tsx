@@ -121,6 +121,7 @@ import {
 } from "@mui/icons-material";
 import { createTheme, ThemeProvider } from "@mui/material";
 import SearchBar from "../search-bar/SearchBar";
+import { useState } from "react";
 
 const drawerWidth = 240;
 
@@ -163,10 +164,17 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: "#18597F",
+          // backgroundColor: "#18597F",
+          background: 'linear-gradient(to bottom, #284E6D, #4DCCC5)',
           color: "white",
         },
       },
+    },
+  },
+  palette: {
+    themeColor: {
+      main: "#284E6D",
+      light: "#4DCCC5",
     },
   },
 });
@@ -175,6 +183,7 @@ export default function ResponsiveDrawer() {
   // const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  // const [active, setActive] = useState('');
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -194,8 +203,10 @@ export default function ResponsiveDrawer() {
   const drawer = (
     <div>
       <ThemeProvider theme={theme}>
-        <Typography variant="h3" textAlign={"center"}>Coligo</Typography>
-        <SearchBar color="white" display={{xs:"block", sm:"none"}}/>
+        <Typography variant="h3" textAlign={"center"}>
+          Coligo
+        </Typography>
+        <SearchBar color="white" display={{ xs: "block", sm: "none" }} />
         <Box sx={{ width: "100%" }} role="presentation">
           <List>
             {siderbar.map((item, index) => (
@@ -207,10 +218,28 @@ export default function ResponsiveDrawer() {
                       backgroundColor: "white",
                       color: "themeColor.primary",
                     },
+                    backgroundColor: `${
+                      item.title.toLowerCase() === "dashboard"
+                        ? "white"
+                        : "auto"
+                    }`,
+                    color: `${
+                      item.title.toLowerCase() === "dashboard"
+                        ? "themeColor.main"
+                        : "auto"
+                    }`,
                   }}
                   onClick={() => console.log(item.title)}
                 >
-                  <ListItemIcon sx={{ color: "white" }}>
+                  <ListItemIcon
+                    sx={{
+                      color: `${
+                        item.title.toLowerCase() === "dashboard"
+                          ? "themeColor.main"
+                          : "white"
+                      }`,
+                    }}
+                  >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.title} />
@@ -231,18 +260,18 @@ export default function ResponsiveDrawer() {
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
-          sx={{ 
-            // mr: 2, 
+          sx={{
+            // mr: 2,
             padding: 2,
             display: { sm: "none" },
-            color:"text.main"
-           }}
+            color: "text.main",
+          }}
         >
           <MenuIcon />
         </IconButton>
         <Box
           component="nav"
-          sx={{ width: {sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
           aria-label="mailbox folders"
         >
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}

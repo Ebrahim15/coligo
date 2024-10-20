@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
             }}
           >
             {/* Welcome Talia, */}
-            {t('welcomeMessage')},
+            {t('welcomeMessage')}
           </Typography>
 
           <Typography
@@ -59,7 +59,8 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            Welcome Talia,
+            {/* Welcome Talia, */}
+            {t('welcomeMessage')}
           </Typography>
 
           {/* Desktop Screen */}

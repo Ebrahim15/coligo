@@ -65,7 +65,11 @@ export default function ExamsCard() {
               sx={{
                 textTransform: "uppercase",
                 width: "fit-content",
-                color: "themeColor.main",
+                // color: "themeColor.main",
+                background: 'linear-gradient(to right, #284E6D, #4DCCC5)',
+                WebkitTextFillColor: "transparent",
+                WebkitBackgroundClip: "text",
+                fontWeight: "bold"
               }}
             >
               Exams time
