@@ -59,11 +59,13 @@ const Home = ({ setLoggedIn }: homeProps) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 5
+            gap: 5,
+            margin: {xs: 3, md: "auto"}
           }}
         >
           <Typography
             component={"div"}
+            textAlign={"center"}
             // textTransform={"uppercase"}
             color="white"
             sx={{ typography: { xs: "h4", sm: "h3", md: "h2", lg: "h1" }, textShadow: "1px 1px 2px #000"}}
