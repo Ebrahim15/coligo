@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import { Box, Button, createTheme, Typography } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-
+import coligoBG from "../../images/coligoBG.png";
 
 type homeProps = {
   setLoggedIn: Function;
@@ -28,6 +28,7 @@ const theme = createTheme({
     button: {
       textTransform: "none",
     },
+    fontFamily: "Trebuchet MS"
   },
 });
 
@@ -41,8 +42,8 @@ const Home = ({ setLoggedIn }: homeProps) => {
       <Box
         sx={{
           height: "100vh",
-          // backgroundColor: "themeColor.light",
-          background: "linear-gradient(to bottom, #284E6D, #4DCCC5)",
+          background: `url(${coligoBG}), linear-gradient(to bottom, #284E6D, #4DCCC5)`,
+          backgroundSize: 300,
         }}
         display={"flex"}
         flexDirection={"column"}
@@ -50,11 +51,42 @@ const Home = ({ setLoggedIn }: homeProps) => {
         alignItems={"center"}
         gap={3}
       >
-        <Typography component={"div"} textTransform={"uppercase"} color="white" sx={{typography: {xs:"h4", sm:"h3", md:"h2", lg: "h1"}}}>Welcome to Coligo</Typography>
-        
-        <Button variant="contained" onClick={handleLoginOnClick}>
-          Log in
-        </Button>
+        <Box
+          sx={{
+            borderRadius: "3rem",
+            backgroundColor: "rgba(255, 255, 255, 0.171)",
+            padding: "5rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 5
+          }}
+        >
+          <Typography
+            component={"div"}
+            // textTransform={"uppercase"}
+            color="white"
+            sx={{ typography: { xs: "h4", sm: "h3", md: "h2", lg: "h1" }, textShadow: "1px 1px 2px #000"}}
+          >
+            Welcome to Coligo
+          </Typography>
+
+          <Button
+            variant="contained"
+            onClick={handleLoginOnClick}
+            sx={{
+              backgroundColor: "themeColor.main",
+              boxShadow: "none",
+              borderRadius: "3rem",
+              paddingInline: "2rem",
+              border: "none",
+              fontSize: "large",
+              width: "fit-content"
+            }}
+          >
+            Log in
+          </Button>
+        </Box>
       </Box>
     </ThemeProvider>
   );

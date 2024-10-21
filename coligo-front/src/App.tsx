@@ -48,7 +48,9 @@ function App() {
     typography: {
       button: {
         textTransform: 'none'
-      }
+      },
+      fontFamily: "Trebuchet MS"
+
     }
   });
 

@@ -1,0 +1,41 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: url("../../images/coligoBG.png"), linear-gradient(to bottom, #284E6D, #4DCCC5);
+    background-size: 300px;
+}
+
+.home-container div {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.171);
+    padding: 2rem;
+    /* border-radius: 25rem; */
+    border-radius: 3rem;
+}
+
+.home-container h1 {
+    font-size: 100px;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.home-container button {
+    padding: 1rem 2rem;
+    font-size: large;
+    border: none;
+    font-weight: bold;
+    color: white;
+    background-color: #284E6D;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    border-radius: 3rem;
+}
+
+.home-container button:hover {
+    opacity: 0.7;
+}
